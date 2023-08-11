@@ -1,0 +1,24 @@
+void primo(){
+    
+    int x;
+    
+    printf("Ingrese un número: ");
+    scanf("%d", &x);
+
+    int k = 2;
+    int primo = 1; 
+
+    while (primo && k*k <= x) {
+        if (x % k == 0) {
+            primo = 0; 
+        }
+        k = k + 1;
+    }
+
+    if (primo) {
+        printf("%d es primo\n", x);
+    } else {
+        printf("%d no es primo\n", x);
+    }
+    
+}
