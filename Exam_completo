@@ -1,0 +1,121 @@
+#include <stdio.h>
+
+void pares() {
+    int n, m;
+    
+    printf("Ingresa el valor de n: \n");
+    scanf("%d", &n);
+    
+    printf("Ingresa el valor de m: \n");
+    scanf("%d", &m);
+    
+    int resultado = 0, i = n;
+    
+    if (n <= m) {
+        while (i < m + 1) {
+            if (i % 2 == 0) {
+                resultado = resultado + i;
+            }
+            i++;
+        }
+        
+        printf("El resultado de la suma de los valores entre %d y %d es %d\n", n, m, resultado);
+    }
+}
+
+void inversa() {
+    int n;
+    
+    printf("Ingresa el tamaño del vector: \n");
+    scanf("%d", &n);
+    
+    int vector[n];
+    
+    printf("Ingresa %d números:\n", n);
+    
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &vector[i]);
+    }
+    
+    printf("Números ingresados en orden inverso:\n");
+    
+    for (int i = n - 1; i >= 0; i--) {
+        printf("%d ", vector[i]);
+    }
+    
+}
+
+void primo(){
+    
+    int x;
+    
+    printf("Ingrese un número: ");
+    scanf("%d", &x);
+
+    int k = 2;
+    int primo = 1; 
+
+    while (primo && k*k <= x) {
+        if (x % k == 0) {
+            primo = 0; 
+        }
+        k = k + 1;
+    }
+
+    if (primo) {
+        printf("%d es primo\n", x);
+    } else {
+        printf("%d no es primo\n", x);
+    }
+    
+}
+
+void calculadora() {
+    int a, b, resultado = 0, operación;
+
+    printf("Ingresa el valor de a: ");
+    scanf("%d", &a);
+
+    printf("Ingresa el valor de b: ");
+    scanf("%d", &b);
+
+    printf("Opciones:\n");
+    printf("1. Suma\n2. Resta\n3. División\n4. Multiplicación\n");
+
+    printf("Ingresa el número de la operación deseada: ");
+    scanf("%d", &operación);
+
+    if (operación == 1) {
+        resultado = a + b;
+        printf("El resultado de la suma es: %d\n", resultado);
+    } else if (operación == 2) {
+        resultado = a - b;
+        printf("El resultado de la resta es: %d\n", resultado);
+    } else if (operación == 3) {
+        if (b != 0) {
+            resultado = a / b;
+            printf("El resultado de la división es: %d\n", resultado);
+        } else {
+            printf("No se puede dividir entre cero.\n");
+        }
+    } else if (operación == 4) {
+        resultado = a * b;
+        printf("El resultado de la multiplicación es: %d\n", resultado);
+    } else {
+        printf("Opción no válida.\n");
+    }
+}
+
+int main(void) {
+    
+    printf("Programa de pares\n");
+    pares();
+    printf("Programa de vector en orden inverso\n");
+    inversa();
+    printf("Programa si es par o no\n");
+    primo();
+    printf("Programa de calculadora\n");
+    calculadora(); 
+    
+    return 0;
+}
