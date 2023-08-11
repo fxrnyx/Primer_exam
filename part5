@@ -1,0 +1,13 @@
+int main(void) {
+    
+    printf("Programa de pares\n");
+    pares();
+    printf("Programa de vector en orden inverso\n");
+    inversa();
+    printf("Programa si es par o no\n");
+    primo();
+    printf("Programa de calculadora\n");
+    calculadora(); 
+    
+    return 0;
+}
